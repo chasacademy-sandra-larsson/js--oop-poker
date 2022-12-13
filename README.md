@@ -1,5 +1,3 @@
-# js--oop-poker
-
 ## Del 1
 
 Skapa en datastruktur med en “normal/poker” kortlek med 52 kort, inga jokrar.

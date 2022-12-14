@@ -1,3 +1,5 @@
+Skapa lämpliga klasser för Card, Player, Dealer, Game, etc. Använd dig av ES6 Classes.
+
 ## Del 1
 
 Skapa en datastruktur med en “normal/poker” kortlek med 52 kort, inga jokrar.
@@ -37,10 +39,10 @@ Dela ut händer till de två spelarna och låt den nya klassen validera deras h�
 
 ## Del 7
 
-Skapa en Game-klass som sköter hela pokerspelet. Det enda main ska gör är att skapa en instans av klassen Game och anropa dess metod start_game.
+Skapa en Game-klass som sköter hela pokerspelet. Det enda main ska gör är att skapa en instans av klassen Game och anropa dess metod startGame.
 Game-klassen ska ha en lista med spelare och en instans av Dealer. Kom ihåg att dealern äger instansen av Deck.
-Skapa en metod som heter add_players som uppmanar användaren att skriva in antalet spelare (minst två) och sen respektive namn på de spelarna. Utifrån det så ska så många instanser av klassen Player skapas och läggas in listan med spelare.
-Skapa metoden start_game och skriv in logik där ett par spelare skapas, de får varsin hand, korten valideras och skriv ut vinnaren på ett snygg sätt.
+Skapa en metod som heter addPlayers som uppmanar användaren att skriva in antalet spelare (minst två) och sen respektive namn på de spelarna. Utifrån det så ska så många instanser av klassen Player skapas och läggas in listan med spelare.
+Skapa metoden startGame och skriv in logik där ett par spelare skapas, de får varsin hand, korten valideras och skriv ut vinnaren på ett snygg sätt.
  
 ## Del 8
 

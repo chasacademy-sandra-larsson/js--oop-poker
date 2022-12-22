@@ -54,7 +54,7 @@ Skapa en game-loop i startGame-metoden som kan hantera att man kör flera rundor
 Försök att skapa en mer verklig validering av korten. Par, tvåpar, triss och så vidare istället för kortens numeriska värden.
  
 
-## Del 10
+## Frivilligt
 
 Lägg till betting inför varje runda
 

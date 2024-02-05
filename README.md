@@ -24,7 +24,8 @@ Flytta alla kort från kasthögen till kortleken. Nu ska spelarna och kasthögen
 Blanda kortleken igen och skriv ut den i konsollen.
 
 
-* VG - nivå. Skapa lämpliga klasser Dealer, Game etc*
+## VG - nivå
+Skapa lämpliga klasser Dealer, Game etc
 
 ## Del 5
 

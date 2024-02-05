@@ -59,5 +59,5 @@ Skapa en game-loop i startGame-metoden som kan hantera att man kör flera rundor
 ## Frivilligt
 * Försök att skapa en mer verklig validering av korten. Par, tvåpar, triss och så vidare istället för kortens numeriska värden.
 * Lägg till betting inför varje runda
-* Skapa ett UI som följer ett MVC-mönster, d.v.s Model, View Controller
+* Skapa ett UI som följer ett MVC-mönster, d.v.s Model, View, Controller
 

@@ -25,7 +25,7 @@ Blanda kortleken igen och skriv ut den i konsollen.
 
 
 ## VG - nivå
-Skapa lämpliga klasser Dealer, Game etc
+Steg 5 - 8. Skapa lämpliga klasser Dealer, Game etc
 
 ## Del 5
 

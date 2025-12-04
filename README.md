@@ -2,7 +2,7 @@
 
 ## Del 1
 
-Skapa en datastruktur med en “normal/poker” kortlek med 52 kort, inga jokrar.
+Skapa en datastruktur (en array) med en “normal/poker” kortlek med 52 kort, inga jokrar.
 Skriv ut kortleken i konsollen, varje kort ska innehålla sin färg, sitt namn och sitt värde (så att det går att räkna med korten).
 Blanda kortleken, skriv ut den blandade kortleken i konsollen.
 

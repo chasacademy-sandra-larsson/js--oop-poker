@@ -24,9 +24,6 @@ Flytta alla kort från kasthögen till kortleken. Nu ska spelarna och kasthögen
 Blanda kortleken igen och skriv ut den i konsollen.
 
 
-## VG - nivå
-Steg 5 - 8. Skapa lämpliga klasser Dealer, Game etc
-
 ## Del 5
 
 Skapa en ny klass som heter Dealer som hanterar allt som har med kortleken att göra. Dealern ska bland annat kunna:

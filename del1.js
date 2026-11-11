@@ -1,7 +1,8 @@
 class Card {
-    constructor(Name, Value){
+    constructor(Name, Value, Color){
         this.Name = Name;
         this.Value = Value;
+        this.Color=Color;
 
     }
     printCard(){
@@ -18,19 +19,7 @@ class Deck {
 
         for(let i=0; i<4; i++){
             let name;
-            
-
-            /*
-            if(i==0){
-                name="Spade";
-            }
-            if(i==1){
-                name="Hearts";
-            }if(i===2){
-                name = "Clover";
-            }if(i===3){
-                name = "Diamond";
-            }*/
+            let color;
 
             switch (i){
                 case 0: 
@@ -48,24 +37,15 @@ class Deck {
                 default:
                     return name;
             }
-            /*
-            this.cards.forEach((card, i)  =>{
-                if(i<11){
-                    card.push(new Card(name, i+2));
-                }
-                if(i===11){
-                    card.push(new Card(name, "J"));
-                }
-                if(i===12){
-                    card.push(new Card(name, "Q"));
-                }
-                if(i===13){
-                    card.push(new Card(name, "K"));
-                }
-                return;
-            }); */
+            if(i%2===0){
+                color="Black";
+            }
+            if(i%2===1){
+                color="Red";
+            }
+            
             for(let i=1; i<=13; i++){
-                this.cards.push(new Card(name, i));
+                this.cards.push(new Card(name, i, color));
             }
 
         }

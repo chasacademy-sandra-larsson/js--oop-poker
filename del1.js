@@ -55,9 +55,31 @@ class Deck {
             console.log(card);
         })
     }
-}
+    shuffle(){
+        //Using Fisher Yates Array
+        const Arr = this.cards;
 
-const card1 = new Deck();
-card1.printDecks();
+        //Start from the last element and swap
+        //one by one. We don't need to run for
+        //the first element thats why i>0
+        for (let i = Arr.length - 1; i > 0; i--){
+            //Pick a random index from 0 to i inclusive
+            let j = Math.floor(Math.random() * (i+1));
+
+            //swap arr[i] with the element at random index
+            [Arr[i], Arr[j]] = [Arr[j], Arr[i]];
+
+        }
+    }
+}
+const organizedCards = new Deck();
+console.log(`Organized cards: ${organizedCards.printDecks()}`);
+
+
+const shuffledCards = new Deck();
+shuffledCards.shuffle();
+console.log(`Shuffled cards: ${shuffledCards.printDecks()}`);
+
+
 
 

@@ -107,18 +107,16 @@ class Deck {
 
         }
     }
+    dealCard(){
+        return this.cards.pop();
+    }
+    collectDiscardPile(discardPile){
+        while(discardPile.length > 0){
+            this.cards.push(discardPile.pop());
+        }
+    }
 }
-/*
-const organizedCards = new Deck();
-// Caused error where it gave undefined at the end: console.log(`Organized cards: ${organizedCards.printDecks()}`);
-console.log("Organized cards:");
-organizedCards.printDecks();
-*/
 
-const shuffledCards = new Deck();
-shuffledCards.shuffle();
-console.log("Shuffled Cards");
-shuffledCards.printDecks();
 
 class Player {
     constructor(name){
@@ -130,9 +128,83 @@ class Player {
         
     }
     getHandValue(){
-        return this.hand.reduce((total, card) => total + card.Value)
+        return this.hand.reduce((total, card) => total + card.Value, 0);
+    }
+    discardAll(discardPile){
+        while(this.hand.length > 0){
+            discardPile.push(this.hand.pop());
+        }
+    }
+    discardCards(count, discardPile){
+        for(let i = 0; i < count; i++){
+            if(this.hand.length > 0) {
+                discardPile.push(this.hand.pop());
+            }
+        }
     }
 }
+/*
+const organizedCards = new Deck();
+// Caused error where it gave undefined at the end: console.log(`Organized cards: ${organizedCards.printDecks()}`); */
 
 
 
+//Skapa och blanda
+const deck = new Deck();
+const discardPile = [];
+
+console.log("Organized cards:");
+deck.printDecks();
+
+deck.shuffle();
+console.log("Shuffled Cards");
+deck.printDecks();
+
+
+const slim = new Player("Slim");
+const luke = new Player("Luke");
+console.log(slim);
+console.log(luke);
+
+//Dela ut 5 kort vardera till spelarna
+for(let i= 0; i<5; i++){
+    slim.receiveCard(deck.dealCard());
+    luke.receiveCard(deck.dealCard());
+}
+
+//Skriva ut kortleken, där 42 kort är kvar, spelarna har 5 kort var och totalvärdet
+console.log(`\nKortleke nefter utdelning ${deck.cards.length} kort var:`);
+deck.printDecks();
+
+console.log("\nSpelare efter utdelning:");
+console.log(slim);
+console.log(`SLims handvärde: ${slim.getHandValue()}`);
+
+console.log(luke);
+console.log(`Lukes handvärde: ${luke.getHandValue()}`);
+
+//Del 3
+slim.discardCards(2, discardPile);
+luke.discardCards(2, discardPile);
+
+for(let i = 0; i<2; i++){
+    slim.receiveCard(deck.dealCard());
+    luke.receiveCard(deck.dealCard());
+}
+
+//Del 4 
+slim.discardAll(discardPile);
+luke.discardAll(discardPile);
+
+// 2. Flytta alla kort från kasthögen tillbaka till kortleken (nu 52 kort i leken, 0 i kasthögen)
+deck.collectDiscardPile(discardPile);
+
+// 3. Verifiera antal kort och blanda kortleken igen
+console.log(`Slims kort: ${slim.hand.length}`);
+console.log(`Lukes kort: ${luke.hand.length}`);
+console.log(`Kasthögens kort: ${discardPile.length}`);
+console.log(`Kortlekens kort: ${deck.cards.length}`);
+
+deck.shuffle();
+console.log("\nÅterställd och nyblandad kortlek:");
+deck.printDecks();

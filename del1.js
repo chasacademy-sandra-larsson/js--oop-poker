@@ -1,14 +1,15 @@
 class Card {
-    constructor(Name, Value, Color){
-        this.Name = Name;
+    constructor(Suit, Value, Name){
+        this.Suit=Suit;
         this.Value = Value;
-        this.Color=Color;
+        this.Name = Name;
+
 
     }
     printCard(){
         console.log(`This name: ${this.Name}`);
         console.log(`This value: ${this.Value}`);
-        console.log(`This Color: ${this.Color}`);
+        console.log(`This Color: ${this.Suit}`);
     }
 
 }
@@ -18,37 +19,72 @@ class Deck {
         this.cards=[];
 
         for(let i=0; i<4; i++){
+            let suit;
             let name;
-            let color;
 
             switch (i){
                 case 0: 
-                    name="Spade";
+                    suit="Spade";
                     break;
                 case 1: 
-                    name = "Hearts";
+                    suit = "Hearts";
                     break;
                 case 2: 
-                    name = "Clover";
+                    suit = "Clover";
                     break;
                 case 3:
-                    name = "Diamonds";
+                    suit = "Diamonds";
                     break;
                 default:
-                    return name;
+                    return suit;
             }
-            if(i%2===0){
-                color="Black";
+            for(let j=1; j<=13; j++){
+                switch(j){
+                    case 1: 
+                        name="Ace";
+                        break;
+                    case 2:
+                        name="Two";
+                        break;
+                    case 3: 
+                        name="Three";
+                        break;
+                    case 4:
+                        name="Four";
+                        break;
+                    case 5: 
+                        name="Five";
+                        break;
+                    case 6:
+                        name="Six";
+                        break;
+                    case 7:
+                        name="Seven";
+                        break;
+                    case 8:
+                        name="Eight";
+                        break;
+                    case 9:
+                        name="Nine";
+                        break;
+                    case 10:
+                        name="Ten";
+                        break;
+                    case 11:
+                        name="Jack";
+                        break;
+                    case 12:
+                        name="Queen";
+                        break;
+                    case 13:
+                        name="King";
+                        break;
+                    default:
+                        return name;
+                }
+            this.cards.push(new Card(suit, j, name));
             }
-            if(i%2===1){
-                color="Red";
-            }
-            
-            for(let i=1; i<=13; i++){
-                this.cards.push(new Card(name, i, color));
-            }
-
-        }
+        }    
     }
     printDecks(){
         this.cards.forEach(card => {
@@ -72,14 +108,31 @@ class Deck {
         }
     }
 }
+/*
 const organizedCards = new Deck();
-console.log(`Organized cards: ${organizedCards.printDecks()}`);
-
+// Caused error where it gave undefined at the end: console.log(`Organized cards: ${organizedCards.printDecks()}`);
+console.log("Organized cards:");
+organizedCards.printDecks();
+*/
 
 const shuffledCards = new Deck();
 shuffledCards.shuffle();
-console.log(`Shuffled cards: ${shuffledCards.printDecks()}`);
+console.log("Shuffled Cards");
+shuffledCards.printDecks();
 
+class Player {
+    constructor(name){
+        this.name=name;
+        this.hand=[];
+    }
+    receiveCard(card){
+        this.hand.push(card);
+        
+    }
+    getHandValue(){
+        return this.hand.reduce((total, card) => total + card.Value)
+    }
+}
 
 
 
